@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>abstractionAlpha || Projects || Minecraft Manhunt</title>
+    </head>
+    <body>
+        <p>
+            <a href="/home/abstractionalpha/Documents/www/abstractionAlpha/abstractionAlpha.html">Home</a>
+            &#8226;
+            <a href="/home/abstractionalpha/Documents/www/abstractionAlpha/aboutMe.html">About Me</a>
+            &#8226;
+            <a href="/home/abstractionalpha/Documents/www/abstractionAlpha/projects/archive.html">Projects</a>
+        </p>
+        <h1>Minecraft Manhunt</h1>
+        <p>
+            <b>Created</b>:
+            October 16 2021
+        </p>
+        <p>
+            <b>Modified</b>:
+            October 16 2021
+        </p>
+        <p>
+            <b>Open Source</b>:
+            Yes
+        </p>
+        <h3>Summary</h3>
+        <p>
+            Minecraft Manhunt is a Minecraft (Java edition) server plugin that is meant to replicate the Minecraft Manhunt series by WilburSoot, revolutionized by Dream.
+            This plugin uses multi-threading and basic object-oriented design in order to create the gamemode.
+        </p>
+        <p>
+            Commands:
+            <ul>
+                <li><code>manhunt</code>: Loads the GUI for Minecraft Manhunt. See more about usage below.</li>
+            </ul>
+            Permissions:
+            <ul>
+                <li><code>manhunt.main</code>: Allows use of the <code>manhunt</code> command.</li>
+            </ul>
+        </p>
+        <h3>Usage</h3>
+        <h5>Workflows</h5>
+        <p>
+            The main and only workflow of this plugin is with the <code>manhunt</code> command.
+        </p>
+        <p>
+            On executing the command, given appropriate permissions are had, the player who executed it will be presented with a GUI.
+            This GUI can only be accessed by one player at a time, and cannot be accessed once the game has started.
+            The GUI has three components:
+            <ul>
+                <li>A <i>Runners</i> button, implemented as a player head</li>
+                <li>A <i>Hunters</i> button, implemented as a player head</li>
+                <li>A <i>Confirm</i> button, implemented as a piece of stained clay</li>
+            </ul>
+        </p>
+        <p>
+            The <b>Runners</b> button opens a separate GUI that contains a whole bunch of player heads.
+            Each player head in this tab is the head of a runner.
+            The runners are stored in an array sorted by name.
+            If you left-click on one of the players, they will be moved from this list to the Hunters list.
+            If this list is empty, it will just show a steve. If you click the steve head, then it will open the Hunters list.
+        </p>
+        <p>
+            The <b>Hunters</b> button opens a separate GUI that contains a bunch of player heads.
+            Each player head in this tabe is the head of a hunter.
+            The hunters are stored in an array sorted by name.
+            If you left-click on one of the players, they wil be moved from this list to the Runners list.
+            If this list is empty, it will just show a steve. If you click the steve head, then it will open the Runners list.
+        </p>
+        <p>
+            The <b>Confirm</b> button is a piece of stained clay.
+            It is red if either of the two lists are empty, and green otherwise (until later pressed).
+            If the clay is red then pressing the button doesn't do anything.
+            If the clay is green then pressing the button will turn the clay blue.
+            If the clay is blue then pressing the button will start the game. (See <b>Gameplay</b> section)
+        </p>
+        <h5>Gameplay</h5>
+        <p>
+            After going through the main workflow, the game begins!
+            All players can play Minecraft as normal
+            (unless friendly fire is turned off in the config).
+            If all of the hunters die, then the game ends.
+        </p>
+        <p>
+            The location of each runner is held in a backing store, simply in the form of an object represnting the runner.
+            The runners' positions will automatically be updated whenever any runner goes through any portal.
+            The runners' positions can be manually updated if a hunter right-clicks their tracking compass.
+            The hunters' compasses update automatically when they go through a portal,
+            as well as manually when they right-click said compass.
+        </p>
+        <p>
+            When any runner dies, all players will recieve a notification.
+            If both runners die, the game ends and all of the dynamic objects are destroyed for a fresh run.
+        </p>
+    </body>
+</html>
